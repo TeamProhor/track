@@ -7,6 +7,7 @@ export default defineConfig({
   schema: "./src/lib/db/schema/*",
   out: "./drizzle",
   dialect: "turso",
+  tablesFilter: ["!__turso_internal_mvcc_meta"],
   dbCredentials: {
     url,
     authToken: process.env.DATABASE_AUTH_TOKEN || process.env.TURSO_AUTH_TOKEN,
